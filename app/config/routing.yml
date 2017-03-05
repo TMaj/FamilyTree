@@ -1,0 +1,19 @@
+app:
+    resource: "@AppBundle/Controller/"
+    type:     annotation
+    
+fos_user:
+    resource: "@FOSUserBundle/Resources/config/routing/all.xml"
+
+addperson:
+    path:      /addperson/{parameter}
+    defaults:
+        _controller: AppBundle:Default:addperson
+        parameter: 'rodzic'
+        
+editperson:
+    path:      /editperson/{parameter}
+    defaults:
+        _controller: AppBundle:Default:editperson
+        parameter: 'rodzic'        
+        

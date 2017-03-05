@@ -1,0 +1,55 @@
+
+{% extends 'base.html.twig' %}
+ 
+
+
+{% block titles %}
+    
+{% endblock titles %}
+
+
+
+{% block body %}
+    
+  {% for flash_message in app.session.flashBag.get('notice') %}
+    <div class="flash-notice">
+        {{ flash_message }}
+    </div>
+{% endfor %}  
+
+<div id="addperson">
+  <div id="tytul2" >{{ title }}</div>
+    
+    {{ form_start(form) }} 
+    {{ form_widget(form) }}
+    
+{{ form_end(form) }}
+</div>
+
+<div id="drzewo">
+<div  class="clear">
+    <div class="tree" >
+    
+  
+    
+    {% set currentPath = path(app.request.attributes.get('_route'),
+                           app.request.attributes.get('_route_params')) %}
+                           {% set newPath = currentPath|replace({'addperson' : 'showperson', 'treechoice': 'showperson'}) %}
+                          
+    {{ zmienna|replace({'%lol%': newPath})|raw  }}
+</div>
+</div>
+</div>
+
+<a href=" {{ path('treechoice') }}" id="treebackbutton" style="margin-left: 20px">Powrót do wszystkich drzew </a>
+
+<div id="goodedition">
+{{ info }}
+</div>
+ {% endblock %}
+
+
+
+
+
+

@@ -1,0 +1,54 @@
+{% extends "base.html.twig" %}
+
+
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+{% block body %}  <div id="showperson">
+    <div id="container" class="clear">
+    <!-- Slider -->
+    <section id="slider" class="clear">
+      <figure id="tytul3">
+        <figcaption1>
+          
+
+
+<table>
+         <tr>
+        <td style="color: #979797">Nazwa użytkownika:  </td>  <td style="font-size: 30px">{{ user.username }} </td>
+        </tr>    
+        <tr>
+        <td style="color: #979797">E-mail:    </td>  <td style="font-size: 30px">{{ user.email }}</td>
+    </tr>
+
+     
+      
+    </table>
+
+ 
+
+      </figcaption1>
+
+      </figure>
+       
+          
+       
+             <div  style="float: left; margin-top: 30px">
+                  <a id="profilebutton"  href={{  path('treechoice') }} >Twoje drzewo</a> </br>
+                   <a id="profilebutton"   href={{  path('fos_user_profile_edit') }} >Ustawienia profilu</a> </br>
+                     <a id="profilebutton"   href={{  path('other') }} >Inne</a> </br>
+                
+            </div>
+     
+     
+                     
+      <div style="float: left; width: 700px;">
+          <img style="width: 500px; height: 400px;  display: block; margin-left: auto; margin-right: auto;" src="{{ asset('bundles/framework/images/top-tree.png') }}"> </img>
+      </div>
+                     
+    </section>
+                     
+    </div>
+{% endblock body %}
+

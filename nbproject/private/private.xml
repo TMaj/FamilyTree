@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project-private xmlns="http://www.netbeans.org/ns/project-private/1">
+    <editor-bookmarks xmlns="http://www.netbeans.org/ns/editor-bookmarks/2" lastBookmarkId="0"/>
+    <open-files xmlns="http://www.netbeans.org/ns/projectui-open-files/2">
+        <group>
+            <file>file:/C:/xampp/htdocs/sfprojekt/app/config/config.yml</file>
+            <file>file:/C:/xampp/htdocs/sfprojekt/app/Resources/views/default/tree_choice.html.twig</file>
+            <file>file:/C:/xampp/htdocs/sfprojekt/app/Resources/views/default/display_info.html.twig</file>
+            <file>file:/C:/xampp/htdocs/sfprojekt/src/AppBundle/Controller/DefaultController.php</file>
+            <file>file:/C:/xampp/htdocs/sfprojekt/src/AppBundle/Entity/Person.php</file>
+            <file>file:/C:/xampp/htdocs/sfprojekt/app/Resources/views/base.html.twig</file>
+            <file>file:/C:/xampp/htdocs/sfprojekt/app/Resources/views/default/index.html.twig</file>
+            <file>file:/C:/xampp/htdocs/sfprojekt/app/Resources/views/default/add_person.html.twig</file>
+            <file>file:/C:/xampp/htdocs/sfprojekt/src/AppBundle/Form/TreeType.php</file>
+            <file>file:/C:/xampp/htdocs/sfprojekt/app/Resources/views/default/other.html.twig</file>
+            <file>file:/C:/xampp/htdocs/sfprojekt/app/Resources/FOSUserBundle/views/Profile/edit.html.twig</file>
+        </group>
+    </open-files>
+</project-private>

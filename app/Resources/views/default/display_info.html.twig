@@ -1,0 +1,137 @@
+
+{% extends 'base.html.twig' %}
+
+
+
+{% block titles %}
+    
+{% endblock titles %}
+
+
+
+{% block body %}
+  {% set currentPath = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) %}  
+ 
+    
+    
+<div id="clear" class="container">
+    <div id="showperson">
+        <div id="tytul2">{{ imie }} {{ nazwisko }} </div>
+    </br>
+    <div id="showperson_text">
+        
+        
+        
+        <table>
+         <tr>
+        <td style="color: #000">Nazwisko rodowe:    </td>  <td style="font-size: 20px"> {% if familyname!=NULL%} {{ familyname }} {%else %} {{ nazwisko }}  {%endif%}  </td>
+        </tr>    
+        <tr>
+        <td style="color: #000">Narodziny:    </td>  <td style="font-size: 20px">{{ born }} </td>
+    </tr>
+
+     
+    {% if died!=NULL %}
+        
+    <tr>    
+        <td style="color: #000">Śmierć: </td>  <td style="font-size: 20px">{{ died}} </td>
+    </tr>   
+    </table>
+    {% else %} 
+        </table>  
+    {% endif %}
+     </br>
+     <div style="color:black; margin-bottom: 50px;">{{ description }} </div>
+     </br>
+     
+      <div style="display:table-cell;">
+    <a id="siblingslinks" style="background-color: #C9C9C9; margin-right: 20px; color: black" > Rodzice </a>
+    </div>
+     
+     {% if parents==NULL %}
+     <div style="display:table-cell;">
+    <a id="siblingslinks" style="background-color: #C9C9C9; margin-right: 20px; color: black" > brak </a>
+    </div>
+      
+     {% else %} 
+      <div style="display:table-cell;">
+   
+    {% for x in parents.id %}
+        {% set q = loop.index0 %}
+        {% set newPath = "http://localhost/sfprojekt/web/app_dev.php/showperson/#{parents.id[q]}" %}
+        
+        <a id="siblingslinks" href= {{ newPath }} > {{ parents.names[q] }} </a>
+        
+    {% endfor %}
+    {% endif %}
+    </div>
+      </br>
+   
+      
+      <div style="display:table-cell;">
+    <a id="siblingslinks" style="background-color: #C9C9C9; margin-right: 20px; color: black" > Dzieci </a>
+    </div>
+     
+     {% if children==NULL %}
+     <div style="display:table-cell;">
+    <a id="siblingslinks" style="background-color: #C9C9C9; margin-right: 20px; color: black" > brak </a>
+    </div>
+      
+     {% else %} 
+      <div style="display:table-cell;">
+   
+    {% for x in children.names %}
+        {% set q = loop.index0 %}
+        {% set newPath = "http://localhost/sfprojekt/web/app_dev.php/showperson/#{children.id[q]}" %}
+        
+        <a id="siblingslinks" href= {{ newPath }} > {{ children.names[q] }} </a>
+       
+    {% endfor %}
+    {% endif %}
+     </div>
+      
+      
+     
+     
+    </br>
+
+      <div style="display:table-cell;">
+    <a id="siblingslinks" style="background-color: #C9C9C9; margin-right: 20px; color: black" > Rodzeństwo </a>
+    </div>
+    
+   
+    
+      {% if siblings_names==NULL %}
+     <div style="display:table-cell;">
+    <a id="siblingslinks" style="background-color: #C9C9C9; margin-right: 20px; color: black" > brak </a>
+    </div>
+      {% endif %}
+      
+      
+      <div style="display:table-cell;">
+   
+    {% for x in siblings_ids %}
+        {#{% set x = chunk %}#}
+        {% set newPath = "http://localhost/sfprojekt/web/app_dev.php/showperson/#{x}" %}
+        
+        <a id="siblingslinks" href= {{ newPath }} > {{ siblings_names[loop.index-1] }} </a>
+        
+    {% endfor %}
+    
+    </div>
+    </div>
+    <a href=" {{ path('treechoice') }}" id="treebackbutton">Powrót do drzewa </a>
+</div>
+</div>
+            
+
+
+
+    
+ {% endblock %}
+
+
+
+
+
+

@@ -1,0 +1,63 @@
+
+
+
+{% extends "base.html.twig" %}
+
+
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+{% block body %}  <div id="showperson">
+    <div id="container" class="clear">
+    <!-- Slider -->
+    <section id="slider" class="clear">
+      <figure id="tytul3">
+        <figcaption1>
+          
+
+
+<table style="height: 65px;">
+         <tr>
+        <td style="color: #979797; "> </td>  <td style="font-size: 30px"></td>
+        </tr>    
+        <tr>
+        <td style="color: #979797; ">  </td>  <td style="font-size: 30px"></td>
+    </tr>
+
+     
+      
+    </table>
+
+ 
+
+      </figcaption1>
+
+      </figure>
+       
+          
+       
+             <div  style="float: left; margin-top: 30px">
+                  <a id="profilebutton"  href={{  path('treechoice') }} >Twoje drzewo</a> </br>
+                   <a id="profilebutton"   href={{  path('fos_user_profile_edit') }} >Ustawienia profilu</a> </br>
+                     <a id="profilebutton" style="background-color: #4E4E4E"   >Inne</a> </br>
+                
+            </div>
+     
+     {% if app.user %}
+                     
+      <div style="float: left; width: 660px;height: 280px; background-color: #E6D1C2; font-size: 20px; padding: 20px;">
+         <a  id="treebackbutton" href="{{ path('remove') }}" onclick="return confirm('Czy na pewno chcesz usunąć wszystkie swoje drzewa?')">Usuń wszystkie drzewa</a>    
+         </br>
+         <a  id="treebackbutton" href="{{ path('removeuser') }}" onclick="return confirm('Czy na pewno chcesz usunąć swoje konto?')">Usuń konto</a>    
+      </div>
+      
+     {%endif%} 
+     
+    </section>
+                     
+    </div>
+{% endblock body %}
+
+
+

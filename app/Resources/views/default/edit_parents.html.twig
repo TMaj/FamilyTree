@@ -1,0 +1,47 @@
+
+{% extends 'base.html.twig' %}
+
+
+
+{% block titles %}
+    
+{% endblock titles %}
+
+
+
+{% block body %}
+    {% for flash_message in app.session.flashBag.get('notice') %}
+    <div class="flash-notice">
+        {{ flash_message }}
+    </div>
+{% endfor %} 
+  {{ title }}
+    
+    {{ form_start(form) }}
+    <div>{{ form_label(form.button2) }}</div>
+    <div>{{ form_widget(form.button2) }}</div>
+    <div>{{ form_label(form.button1) }}</div>
+    <div>{{ form_widget(form.button1) }}</div>
+    
+    {{ form_widget(form) }}
+   
+{{ form_end(form) }}
+
+{{ info }}
+        
+<div class="chart" id="OrganiseChart-simple">
+	</div>
+	
+
+            
+
+
+
+    
+ {% endblock %}
+
+
+
+
+
+

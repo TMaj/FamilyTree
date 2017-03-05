@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+<head>
+<title>Family tree</title>
+<meta charset="UTF-8">
+
+{% block stylesheets %}
+        <link href="{{ asset('bundles/framework/css/treestyl.css') }}" type="text/css" rel="stylesheet" />
+                <link href="{{ asset('bundles/framework/css/layout_1.css') }}" type="text/css" rel="stylesheet" />
+               
+
+{% endblock %}
+</head>
+<body>
+<div class="wrapper row1">
+  <header id="header" class="clear">
+    <div id="hgroup">
+      <h1><a href="{{ path('homepage') }}">Family Tree</a></h1>
+      <h2>Seize your family with a few clicks</h2>
+    </div>
+      
+   
+    {% if app.user %}
+        <div id="logging">
+    <h1><a id="logbutton" href="{{ path('fos_user_profile_show') }}" >{{app.user}} </a></h1>
+    <h1><a id="logbutton" href="{{ path('fos_user_security_logout') }}" class="btn btn-default" role="button">Wyloguj</a></h1>
+        </div>
+    {% else %}             
+    <div id="logging">
+      <h1><a id="logbutton" href="{{ path('fos_user_security_login') }}" class="btn btn-default" role="button"> Zaloguj </a></h1>
+      <h1><a id="logbutton" href="{{ path('fos_user_registration_register') }}" class="btn btn-default" role="button">Zarejestruj</a></h1>
+    </div>
+    {% endif%}
+ 
+      
+
+ {% if (app.user) %}      
+
+ {% else %}  
+    <nav>
+      <ul>
+        <li><a href="{{ path('faq') }}">Czym jest FamilyTree?</a></li>
+        <li><a href="{{ path('faq') }}">Jak rozpocząć?</a></li>
+        <li><a href="{{ path('faq') }}">FAQ</a></li>
+      
+        <li class="last"><a href="{{ path('faq') }}">O projekcie</a></li>
+      </ul>
+    </nav>
+
+{% endif%}  
+   
+  </header>
+</div>
+<!-- content -->
+<div class="wrapper row2">
+    {% block body %}
+  
+    {% endblock %}
+</div>
+<!-- Footer -->
+<div class="wrapper row3">
+  <footer id="footer" class="clear">
+    <p class="fl_left">Copyright &copy; 2016 - All Rights Reserved - <a href="#">Family Tree</a></p>
+    <p class="fl_right">Template by <a href="http://www.os-templates.com/" title="Free Website Templates">OS Templates</a></p>
+  </footer>
+</div>
+</body>
+</html>
+

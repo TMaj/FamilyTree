@@ -1,0 +1,70 @@
+
+{% extends 'base.html.twig' %}
+ 
+
+
+{% block titles %}
+    
+{% endblock titles %}
+
+ {% set currentPath = path(app.request.attributes.get('_route'), app.request.attributes.get('_route_params')) %}
+ {% set backPath = "http://localhost/sfprojekt/web/app_dev.php/treechoice"|replace({'addperson' : '', 'treechoice': ''}) %}
+ 
+{% block body %}
+    
+ <a id="treebackbutton"  style="background-color:#979797" href={{backPath}} >Wróć</a>
+ 
+  {% for flash_message in app.session.flashBag.get('notice') %}
+    <div id="goodedition">
+        {{ flash_message }}
+    </div>
+{% endfor %}  
+    
+<div id="personchoice">
+    <div id="tytul" >{{ title }}</div>
+    <div id="buttony">
+    {{ form_start(form) }} 
+    {{ form_widget(form) }}
+   
+    
+    
+    {{ form_end(form) }}
+    </div>
+</div>
+
+<div id="drzewo" >
+
+<div class="tree" style=" width: 2500px; "   >
+    
+  
+   
+                           {% set newPath = "http://localhost/sfprojekt/web/app_dev.php/treechoice"|replace({'addperson' : 'showperson', 'treechoice': 'showperson'}) %}
+                
+    {{ zmienna|replace({'%lol%': newPath})|raw  }}
+    
+</div>
+
+</div>
+    <div style="display:table-cell; width: 270px;" >
+    <a id="treebackbutton" style="background-color: #FF9900" >Wybierz osobę-korzeń drzewa:</a>
+    </div>
+    <div style="display:table-cell;">
+    {% set i = 0 %}
+    {% for person in tablica.person %}
+        {% set newPath1 = currentPath|replace({'treechoice' : "treechoice_#{i}"}) %}
+        <a id="treebackbutton" href= {{ path('treechoice') }}_{{ i }} >{{ person }}</a>
+    {% set i =i+1 %}    
+    {% endfor %}
+    </div>
+
+ 
+
+{{ info }}
+
+ {% endblock %}
+
+
+
+
+
+

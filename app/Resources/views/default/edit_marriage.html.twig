@@ -1,0 +1,41 @@
+
+{% extends 'base.html.twig' %}
+
+
+
+{% block titles %}
+    
+{% endblock titles %}
+
+
+
+{% block body %}
+    
+<div id="addperson">
+  <div id="tytul2" >{{ title }}</div>
+    
+    {{ form_start(form) }} 
+    {{ form_widget(form) }}
+    
+{{ form_end(form) }}
+</div>
+
+
+
+<a href=" {{ path('treechoice') }}" id="treebackbutton" style="margin-left: 20px">Powrót do drzewa </a>
+
+{{ info }}
+
+
+            
+
+
+
+    
+ {% endblock %}
+
+
+
+
+
+

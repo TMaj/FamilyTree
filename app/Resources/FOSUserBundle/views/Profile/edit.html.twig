@@ -1,0 +1,89 @@
+{#{% extends "base.html.twig" %}
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+{% block body %}
+    <div id="container" class="clear">
+    <!-- Slider -->
+    <section id="slider" class="clear">
+      <figure><img src="{{ asset('bundles/framework/images/tree.png') }}">
+        <figcaption>
+
+{{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+    {{ form_widget(form) }}
+    <div>
+        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+    </div>
+{{ form_end(form) }}
+
+
+ </figcaption>
+      </figure>
+    </section>
+    </div>
+{% endblock body %}
+#}
+
+
+
+{% extends "base.html.twig" %}
+
+
+
+{% trans_default_domain 'FOSUserBundle' %}
+
+
+{% block body %}  <div id="showperson">
+    <div id="container" class="clear">
+    <!-- Slider -->
+    <section id="slider" class="clear">
+      <figure id="tytul3">
+        <figcaption1>
+          
+
+
+<table style="height: 65px;">
+         <tr>
+        <td style="color: #979797; "> </td>  <td style="font-size: 30px"></td>
+        </tr>    
+        <tr>
+        <td style="color: #979797; ">  </td>  <td style="font-size: 30px"></td>
+    </tr>
+
+     
+      
+    </table>
+
+ 
+
+      </figcaption1>
+
+      </figure>
+       
+          
+       
+             <div  style="float: left; margin-top: 30px">
+                  <a id="profilebutton"  href={{  path('treechoice') }} >Twoje drzewo</a> </br>
+                   <a id="profilebutton" style="background-color: #4E4E4E"  >Ustawienia profilu</a> </br>
+                     <a id="profilebutton"   href={{  path('other') }} >Inne</a> </br>
+                
+            </div>
+     
+     
+                     
+      <div style="float: left; width: 660px;height: 280px; background-color: #E6D1C2; font-size: 15px; padding: 20px;">
+          {{ form_start(form, { 'action': path('fos_user_profile_edit'), 'attr': { 'class': 'fos_user_profile_edit' } }) }}
+    {{ form_widget(form) }}
+    <div>
+        <input type="submit" value="{{ 'profile.edit.submit'|trans }}" />
+    </div>
+{{ form_end(form) }}     
+      </div>
+                     
+    </section>
+                     
+    </div>
+{% endblock body %}
+
+
+
